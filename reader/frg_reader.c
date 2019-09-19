@@ -27,7 +27,7 @@
  OTHER DEALINGS IN THE SOFTWARE.
 */
 #include "frg_reader.h"
-#include "../../lz4/lz4.h"//http://code.google.com/p/lz4/
+#include <lz4.h>//http://code.google.com/p/lz4/
 #include "frg_draw.h"
 #ifdef _IS_NEED_INLINE_FRG_DRAW_CODE
     #undef  _IS_NEED_INLINE_FRG_DRAW_CODE

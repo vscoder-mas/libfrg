@@ -29,6 +29,7 @@
 #ifndef _LIBFRG_frg_writer_base_h
 #define _LIBFRG_frg_writer_base_h
 
+#include <stddef.h>
 #include "../../reader/frg_private_reader_base.h"
 #include "assert.h" //assert
 #include "string.h" //memset

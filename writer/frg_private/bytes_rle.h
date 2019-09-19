@@ -30,6 +30,7 @@
 #ifndef __BYTES_RLE_H_
 #define __BYTES_RLE_H_
 
+#include <stddef.h>
 #include <vector>
 
 enum TRleParameter{ kRle_bestSize=1, kRle_default=3, kRle_bestUnRleSpeed=32 };
