@@ -70,6 +70,21 @@ enum TConvertType {
        time=(time1-time0)/runLoopCount; \
     }
 
+float fast_sqrtf(float number)
+{
+    long i;
+    float x, y;
+    const float f = 1.5F;
+    x = number * 0.5F;
+    y  = number;
+    i  = * ( long * ) &y;
+    i  = 0x5f3759df - ( i >> 1 );
+    y  = * ( float * ) &i;
+    y  = y * ( f - ( x * y * y ) );
+    y  = y * ( f - ( x * y * y ) );
+    return number * y;
+}
+
 void convertImageType(const char* srcFile,const char* dstFile,
                       TConvertType cvType,float quality,float compressSize){
     const bool         isPngSrc=(cvType==cv_png2frg);
@@ -139,7 +154,9 @@ int main(int argc, const char * argv[]){
     TConvertType cvType=cv_unknown;
     if (isFileType(srcFile,".png")&&isFileType(dstFile,".frg")){
         cvType=cv_png2frg;
-        if(argc>=4) quality=(float)atof(argv[3]);
+        if(argc>=4) quality = (float)atof(argv[3]);
+        quality *= 100.0;
+        quality = fast_sqrtf(quality);
         if(argc>=5) compressSize=(float)atof(argv[4]);
     }else if (isFileType(srcFile,".frg")&&isFileType(dstFile,".png")){
         cvType=cv_frg2png;

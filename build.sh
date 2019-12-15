@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PNAME="fgr"
+PNAME="frg"
 PDEMO="${PNAME}_demo"
 PP2F="png2${PNAME}"
 

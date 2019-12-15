@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PNAME="fgr"
+PNAME="frg"
 PLIB="lib${PNAME}.so.1"
 PDEMO="${PNAME}_demo-shared"
 PP2F="png2${PNAME}-shared"
