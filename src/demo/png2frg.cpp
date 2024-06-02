@@ -15,7 +15,7 @@
 #include <stdexcept>  //std::runtime_error
 #include "../writer/frg_writer.h"
 #include "../reader/frg_reader.h"
-#include <libpng15/png.h>
+#include <libpng16/png.h>
 
 typedef unsigned char TByte;
 
@@ -155,8 +155,8 @@ int main(int argc, const char * argv[]){
     if (isFileType(srcFile,".png")&&isFileType(dstFile,".frg")){
         cvType=cv_png2frg;
         if(argc>=4) quality = (float)atof(argv[3]);
-        quality *= 100.0;
-        quality = fast_sqrtf(quality);
+        // quality *= 100.0;
+        // quality = fast_sqrtf(quality);
         if(argc>=5) compressSize=(float)atof(argv[4]);
     }else if (isFileType(srcFile,".frg")&&isFileType(dstFile,".png")){
         cvType=cv_frg2png;

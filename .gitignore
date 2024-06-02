@@ -1,3 +1,8 @@
 .DS_Store
 xcuserdata
 demo/builds
+.vscode
+*.out
+*.o
+*.png
+*.frg
